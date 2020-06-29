@@ -1,0 +1,222 @@
+@font-face {
+  font-family: headings;
+  src: url("../static/fonts/Bellota/Bellota-Regular.ttf");
+
+  /* font-family: serious;
+  src: url("../static/fonts/Open_Sans/OpenSans-SemiBold.ttf"); */
+}
+@font-face {
+  /* font-family: headings;
+  src: url("../static/fonts/Bellota/Bellota-Bold.ttf"); */
+
+  font-family: serious;
+  src: url("../static/fonts/Open_Sans/OpenSans-SemiBold.ttf");
+}
+
+@font-face{
+  color: #444444;
+  font-family: anothaOne;
+  src: url("../static/fonts/Bellota/Bellota-Bold.ttf");
+}
+
+body {
+    background: #f0dfdf;
+    font-family: serious;
+    color: #333333;
+    margin-top: 4rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    text-align: center;
+  }
+
+  h1{
+    /* color: #444444; */
+    font-family: anothaOne;
+  }
+  
+  h2, h3, h4, h5, h6 {
+    color: #444444;
+    font-family: headings;
+
+  }
+
+  .bg-steel {
+    background-color: #ff5c49;
+  }
+  .card-signin {
+    border: 0;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 300;
+    font-size: 1.5rem;
+  }
+  
+  .card-signin .card-body {
+    padding: 2rem;
+  }
+  
+  .form-signin {
+    width: 100%;
+  }
+  
+  .form-signin .btn {
+    font-size: 80%;
+    border-radius: 5rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+  }
+  
+  .site-header .navbar-nav .nav-link {
+    color: #ffffff;
+    font-family: headings;
+  }
+  
+  .site-header .navbar-nav .nav-link:hover {
+    font-family: headings;
+    color: #ffffff;
+  }
+  
+  .site-header .navbar-nav .nav-link.active {
+    font-family: headings;
+    font-weight: 500;
+  }
+  
+  .content-section {
+    /* align-content: center; */
+    /* min-width: 500px;
+    max-width: 500px; */
+    text-align: center;
+    /* width: 50%; */
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 1px solid #496dff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    min-width: 500px;
+    max-width: 500px;
+    text-align: left;
+  }
+  .account-section {
+    /* align-content: center; */
+    /* min-width: 500px;
+    max-width: 500px; */
+    text-align: center;
+    width: 100%;
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 0px solid #496dff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1000px;
+    text-align: left;
+  }
+  .home-section {
+    /* align-content: center; */
+    /* min-width: 500px;
+    max-width: 500px; */
+    text-align: center;
+    width: 100%;
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 0px solid #496dff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    min-width: 800px;
+    max-width: 1000px;
+    text-align: center;
+  }
+  .flash-section {
+    /* align-content: center; */
+    /* min-width: 500px;
+    max-width: 500px; */
+    text-align: center;
+    width: 80%;
+    padding: 10px 20px;
+    /* border: 0px solid #496dff; */
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    margin: 0 auto;
+    max-width: 1000px;
+    min-width: 500px;
+    text-align: center;
+  }
+  p.a {
+    white-space: pre;
+  }
+  p.navbar{
+    font-family: headings;
+  }
+
+  .footer{
+    background: #ffffff;
+    width: 100%;
+    padding: 10px 20px;
+    border: 0px solid #496dff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    position: relative;
+    bottom: 0px;
+
+  }
+  
+  .article-title {
+    color: #444444;
+  }
+  
+  a.article-title:hover {
+    color: #428bca;
+    text-decoration: none;
+  }
+  
+  .article-content {
+    white-space: pre-line;
+  }
+  
+  .article-img {
+    height: 65px;
+    width: 65px;
+    margin-right: 16px;
+  }
+  
+  .article-metadata {
+    padding-bottom: 1px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #e3e3e3
+  }
+  
+  .article-metadata a:hover {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .article-svg {
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+  }
+  
+  .account-img {
+    height: 125px;
+    width: 125px;
+    margin-right: 20px;
+    margin-bottom: 16px;
+  }
+  
+  .account-heading {
+    font-size: 2.5rem;
+  }
