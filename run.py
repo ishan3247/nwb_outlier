@@ -26,7 +26,7 @@ from pynwb import NWBHDF5IO
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'therearenooutliers'
 UPLOAD_FOLDER = 'upload_folder'
-ALLOWED_EXTENSIONS = {'jpg', 'jpeg', 'nwb'}
+ALLOWED_EXTENSIONS = {'nwb'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 filename=None
 
