@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block tabTitle %}Outlier Extension{% endblock %}
+{% block pageTitle %}Welcome to our Outlier Extension Tool {% endblock %}
+{% block header %}
+{% endblock %}
+
+{% block body %}
+
+
+<div class="content-section">
+    <form method="POST" action="" enctype='multipart/form-data' >
+        {{ form.hidden_tag() }}
+        <fieldset class="form-group">
+          <!-- <legend class="border-bottom mb-4">Log In</legend> -->
+            
+           
+            <div class="form-check">
+                {{ form.findOutliers(class="form-check-input") }}
+                {{ form.findOutliers.label(class="form-check-label") }}
+            </div>
+        </fieldset>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-outline-info") }}
+        </div>
+    </form>
+  </div>
+
+
+
+{% endblock %}

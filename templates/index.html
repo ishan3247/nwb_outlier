@@ -7,24 +7,7 @@
 
 {% block body %}
 
+<a href="{{url_for('upload_file')}}"><button type="button" class="btn btn-primary btn-lg">Upload a new file</button></a>
 
-
-<div class="content-section">
-    <form method="POST" action="">
-        {{ form.hidden_tag() }}
-        <fieldset class="form-group">
-          <!-- <legend class="border-bottom mb-4">Log In</legend> -->
-            
-           
-            <div class="form-check">
-                {{ form.findOutliers(class="form-check-input") }}
-                {{ form.findOutliers.label(class="form-check-label") }}
-            </div>
-        </fieldset>
-        <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info") }}
-        </div>
-    </form>
-  </div>
 
 {% endblock %}

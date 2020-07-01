@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block tabTitle %}Outlier Extension{% endblock %}
+{% block pageTitle %}Welcome to our Outlier Extension Tool {% endblock %}
+{% block header %}
+{% endblock %}
+
+{% block body %}
+
+
+<div class="account-section">
+    <h1>Upload new File</h1>
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      <input type=submit value=Upload>
+    </form>
+</div>
+
+
+{% if file %}
+<div class="footer">
+   <p>
+    {{file}}
+   </p> 
+
+</div>
+{% endif %}
+
+
+
+    {% endblock %}

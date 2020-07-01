@@ -109,7 +109,7 @@ body {
     /* min-width: 500px;
     max-width: 500px; */
     text-align: center;
-    width: 100%;
+    width: 50%;
     background: #ffffff;
     padding: 10px 20px;
     border: 0px solid #496dff;
@@ -117,8 +117,8 @@ body {
     margin-bottom: 20px;
     display: inline-block;
     margin: 0 auto;
-    min-width: 800px;
-    max-width: 1000px;
+    /* min-width: 800px;
+    max-width: 1000px; */
     text-align: left;
   }
   .home-section {

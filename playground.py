@@ -11,10 +11,23 @@ from pynwb import NWBFile
 from pynwb import NWBHDF5IO
 
 
-io = NWBHDF5IO('nwb_files/test_TimeSeries.nwb', 'r')
+io = NWBHDF5IO('nwb_files/test.nwb', 'r')
    
 
 nwbfile_in = io.read()
+
+
+print(nwbfile_in)
+
+print("\n\n\n\n\n some buffer inbetween \n\n\n\n\n\n\n")
+
+print(nwbfile_in.acquisition['flow'].data[:100])
+
+
+lol = nwbfile_in.acquisition['flow']
+
+
+'''
 # currently nwbfile_in has the following fields
 # Fields:
 #   acquisition: {
@@ -30,8 +43,11 @@ nwbfile_in = io.read()
 
 # to dig deeper into the acquistion we do the following
 # unsure why we need the brackets at end with test_timeseries
-test_timeseries_in = nwbfile_in.acquisition['test_timeseries']
+'''
 
+# test_timeseries_in = nwbfile_in.acquisition['test_timeseries']
+
+'''
 # the acquistion has fields, note data and timestamp are hdf5 arrays
 # this is a file format for large data files, although this one only has like 10
 # Fields:
@@ -45,15 +61,17 @@ test_timeseries_in = nwbfile_in.acquisition['test_timeseries']
 #   timestamps_unit: seconds
 #   unit: SIunit
 
+'''
 
-print("\n the time series data is \n \n", test_timeseries_in)
+
+print("\n the time series data is \n \n", lol)
 print('looking into the time_series data field we have')
-print("\n time stamps are \n", test_timeseries_in.timestamps[:])
-print("\n data are \n", test_timeseries_in.data[:])
+# print("\n time stamps are \n", lol.timestamps[:100])
+# print("\n data are \n", lol.data[:100])
 
 
-timestamp =[x for x in test_timeseries_in.timestamps]
-data = [y for y in test_timeseries_in.data]
+timestamp =[x for x in lol.timestamps[]]
+data = [y for y in lol.data]
 
 plt.plot(timestamp, data, 'ro')
 plt.show()
