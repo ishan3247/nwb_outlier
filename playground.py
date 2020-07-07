@@ -9,10 +9,11 @@ import matplotlib.pyplot as plt
 # nwb stuff
 from pynwb import NWBFile
 from pynwb import NWBHDF5IO
+from std import Tests
 
 
 io = NWBHDF5IO('nwb_files/test.nwb', 'r')
-   
+
 
 nwbfile_in = io.read()
 
@@ -66,16 +67,17 @@ lol = nwbfile_in.acquisition['flow']
 
 print("\n the time series data is \n \n", lol)
 print('looking into the time_series data field we have')
-# print("\n time stamps are \n", lol.timestamps[:100])
-# print("\n data are \n", lol.data[:100])
+print("\n time stamps are \n", lol.timestamps[:100])
+print("\n data are \n", lol.data[:100])
 
 
-timestamp =[x for x in lol.timestamps[]]
-data = [y for y in lol.data]
+# timestamp = [x for x in lol.timestamps]
+# data = [y for y in lol.data]
 
-plt.plot(timestamp, data, 'ro')
-plt.show()
+# plt.plot(timestamp, data, 'ro')
+# plt.show()
 
-
+print("STD is: " + str(Tests.check_spread(Tests, lol.data[:])))
+print(Tests.prob_jumps(Tests, lol.data[:]))
 
 io.close()
