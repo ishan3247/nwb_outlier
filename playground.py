@@ -26,6 +26,10 @@ print(nwbfile_in.acquisition['flow'].data[:100])
 
 
 lol = nwbfile_in.acquisition['flow']
+lol2 = nwbfile_in.acquisition['wheel']
+lol3 = nwbfile_in.acquisition['TwoPhotonSeries1']
+print("HERE")
+print(lol3)
 
 
 '''
@@ -69,6 +73,8 @@ print("\n the time series data is \n \n", lol)
 print('looking into the time_series data field we have')
 print("\n time stamps are \n", lol.timestamps[:100])
 print("\n data are \n", lol.data[:100])
+print("\n data are \n", lol2.data[:100])
+print("\n data are \n", lol3.data[:100])
 
 
 # timestamp = [x for x in lol.timestamps]
@@ -79,5 +85,14 @@ print("\n data are \n", lol.data[:100])
 
 print("STD is: " + str(Tests.check_spread(Tests, lol.data[:])))
 print(Tests.prob_jumps(Tests, lol.data[:]))
+print(Tests.check_saturation(Tests, lol.data[:]))
+
+print("STD is: " + str(Tests.check_spread(Tests, lol2.data[:])))
+print(Tests.prob_jumps(Tests, lol2.data[:]))
+print(Tests.check_saturation(Tests, lol2.data[:]))
+
+print("STD is: " + str(Tests.check_spread(Tests, lol3.data[:])))
+print(Tests.prob_jumps(Tests, lol3.data[:]))
+print(Tests.check_saturation(Tests, lol3.data[:]))
 
 io.close()
