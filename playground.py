@@ -9,27 +9,34 @@ import matplotlib.pyplot as plt
 # nwb stuff
 from pynwb import NWBFile
 from pynwb import NWBHDF5IO
-from std import Tests
+from std import nwb_metric
 
 
-io = NWBHDF5IO('nwb_files/test.nwb', 'r')
-
-
+io = NWBHDF5IO('flask/nwb_files/test.nwb', 'r')
 nwbfile_in = io.read()
 
+data = nwbfile_in.acquisition['flow']
+data2 = nwbfile_in.acquisition['wheel']
+# drop nan from data2
+# data2 = data2[np.isfinite(data2)]
+# data2 = data2[np.logical_not(np.isnan(data2))]
 
-print(nwbfile_in)
+data3 = nwbfile_in.acquisition['TwoPhotonSeries1']
+# drop nan from data3
+# data3 = data3[np.isfinite(data3)]
 
-print("\n\n\n\n\n some buffer inbetween \n\n\n\n\n\n\n")
+print("flow STD is: " + str(nwb_metric.check_spread(nwb_metric, data.data[:])))
+print("flow prob jumps is: " + str(nwb_metric.prob_jumps(nwb_metric, data.data[:])))
+print("flow saturation is: " + str(nwb_metric.check_saturation(nwb_metric, data.data[:])))
 
-print(nwbfile_in.acquisition['flow'].data[:100])
+print("wheel STD is: " + str(nwb_metric.check_spread(nwb_metric, data2.data[:])))
+print("Wheel prob jumps is: "+  str(nwb_metric.prob_jumps(nwb_metric, data2.data[:])))
+print("Wheel saturation is: "+ str(nwb_metric.check_saturation(nwb_metric, data2.data[:])))
 
+print("two photon STD is: " + str(nwb_metric.check_spread(nwb_metric, data3.data[:])))
+print("two photon prob jumps is: "+  str(nwb_metric.prob_jumps(nwb_metric, data3.data[:])))
+print("two photon saturation is: "+ str(nwb_metric.check_saturation(nwb_metric, data3.data[:])))
 
-lol = nwbfile_in.acquisition['flow']
-lol2 = nwbfile_in.acquisition['wheel']
-lol3 = nwbfile_in.acquisition['TwoPhotonSeries1']
-print("HERE")
-print(lol3)
 
 
 '''
@@ -69,30 +76,24 @@ print(lol3)
 '''
 
 
-print("\n the time series data is \n \n", lol)
-print('looking into the time_series data field we have')
-print("\n time stamps are \n", lol.timestamps[:100])
-print("\n data are \n", lol.data[:100])
-print("\n data are \n", lol2.data[:100])
-print("\n data are \n", lol3.data[:100])
+# print("\n the time series data is \n \n", data)
+# print('looking into the time_series data field we have')
+# print("\n time stamps are \n", data.timestamps[:100])
+# print("\n data are \n", data.data[:100])
+# print("\n data are \n", data2.data[:100])
+# print("\n data are \n", data3.data[:100])
 
 
-# timestamp = [x for x in lol.timestamps]
-# data = [y for y in lol.data]
+# timestamp = [x for x in data.timestamps]
+# data = [y for y in data.data]
 
 # plt.plot(timestamp, data, 'ro')
 # plt.show()
 
-print("STD is: " + str(Tests.check_spread(Tests, lol.data[:])))
-print(Tests.prob_jumps(Tests, lol.data[:]))
-print(Tests.check_saturation(Tests, lol.data[:]))
 
-print("STD is: " + str(Tests.check_spread(Tests, lol2.data[:])))
-print(Tests.prob_jumps(Tests, lol2.data[:]))
-print(Tests.check_saturation(Tests, lol2.data[:]))
 
-print("STD is: " + str(Tests.check_spread(Tests, lol3.data[:])))
-print(Tests.prob_jumps(Tests, lol3.data[:]))
-print(Tests.check_saturation(Tests, lol3.data[:]))
+# print("STD is: " + str(nwb_metric.check_spread(nwb_metric, data3.data[:])))
+# print(nwb_metric.prob_jumps(nwb_metric, data3.data[:]))
+# print(nwb_metric.check_saturation(nwb_metric, data3.data[:]))
 
 io.close()
