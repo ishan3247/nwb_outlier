@@ -14,6 +14,7 @@ from std import nwb_metric
 
 io = NWBHDF5IO('flask/nwb_files/test.nwb', 'r')
 nwbfile_in = io.read()
+print(nwbfile_in)
 
 data = nwbfile_in.acquisition['flow']
 data2 = nwbfile_in.acquisition['wheel']
@@ -26,17 +27,24 @@ data3 = nwbfile_in.acquisition['TwoPhotonSeries1']
 # data3 = data3[np.isfinite(data3)]
 
 print("flow STD is: " + str(nwb_metric.check_spread(nwb_metric, data.data[:])))
-print("flow prob jumps is: " + str(nwb_metric.prob_jumps(nwb_metric, data.data[:])))
-print("flow saturation is: " + str(nwb_metric.check_saturation(nwb_metric, data.data[:])))
+print("flow prob jumps is: " +
+      str(nwb_metric.prob_jumps(nwb_metric, data.data[:])))
+print("flow saturation is: " +
+      str(nwb_metric.check_saturation(nwb_metric, data.data[:])))
 
-print("wheel STD is: " + str(nwb_metric.check_spread(nwb_metric, data2.data[:])))
-print("Wheel prob jumps is: "+  str(nwb_metric.prob_jumps(nwb_metric, data2.data[:])))
-print("Wheel saturation is: "+ str(nwb_metric.check_saturation(nwb_metric, data2.data[:])))
+print("wheel STD is: " +
+      str(nwb_metric.check_spread(nwb_metric, data2.data[:])))
+print("Wheel prob jumps is: " +
+      str(nwb_metric.prob_jumps(nwb_metric, data2.data[:])))
+print("Wheel saturation is: " +
+      str(nwb_metric.check_saturation(nwb_metric, data2.data[:])))
 
-print("two photon STD is: " + str(nwb_metric.check_spread(nwb_metric, data3.data[:])))
-print("two photon prob jumps is: "+  str(nwb_metric.prob_jumps(nwb_metric, data3.data[:])))
-print("two photon saturation is: "+ str(nwb_metric.check_saturation(nwb_metric, data3.data[:])))
-
+print("two photon STD is: " +
+      str(nwb_metric.check_spread(nwb_metric, data3.data[:])))
+print("two photon prob jumps is: " +
+      str(nwb_metric.prob_jumps(nwb_metric, data3.data[:])))
+print("two photon saturation is: " +
+      str(nwb_metric.check_saturation(nwb_metric, data3.data[:])))
 
 
 '''
@@ -89,7 +97,6 @@ print("two photon saturation is: "+ str(nwb_metric.check_saturation(nwb_metric, 
 
 # plt.plot(timestamp, data, 'ro')
 # plt.show()
-
 
 
 # print("STD is: " + str(nwb_metric.check_spread(nwb_metric, data3.data[:])))
