@@ -2,6 +2,12 @@ import statistics
 import math
 
 
+"""
+next steps: autochecking for the correct datatypes
+need ways to define specific phenomenon (like 90% stimulated outlier)
+    would need to know about it in the first place in order to recognize 
+"""
+
 class nwb_metric:
 
     # checks if more than 10% of data is "close" to min or max values defined as within 1% of the range
