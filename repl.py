@@ -33,12 +33,11 @@ while 1:
     # for field in acquisition_fields:\
 
     if x in acquisition_fields:
-        print(x)
-        data = nwbfile_in.acquisition[str(x)]
-        print(data)
-        print("flow STD is: " +
+        data = nwbfile_in.acquisition[x]
+        print(data.data[:])
+        print(str(x) + " STD is: " +
               str(nwb_metric.check_spread(nwb_metric, data.data[:])))
-        print("flow prob jumps is: " +
+        print(str(x) + " prob jumps is: " +
               str(nwb_metric.prob_jumps(nwb_metric, data.data[:])))
-        print("flow saturation is: " +
+        print(str(x) + " saturation is: " +
               str(nwb_metric.check_saturation(nwb_metric, data.data[:])))
