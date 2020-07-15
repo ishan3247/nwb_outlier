@@ -1,3 +1,5 @@
+## todo: get rid of NANs
+
 from pynwb import NWBFile
 from pynwb import NWBHDF5IO
 from std import nwb_metric
@@ -5,6 +7,20 @@ import os
 
 import warnings
 warnings.filterwarnings("ignore")
+
+# check if the supplied filepath is a valid path for an nwb document
+def valid_path(path):
+
+    if len(path)<4:
+        print('not a valid filepath')
+        return False
+
+    if path[-4:] == '.nwb':
+        return True
+    
+    print('not a valid filepath')
+    return False
+    
 
 
 while 1:
@@ -15,7 +31,11 @@ while 1:
     entry = x.split(' ')
 
     if entry[0] == 'file':
+        if len(entry) == 1:
+            print('no path specified')
+            continue
         filepath = entry[1]
+        if not valid_path(filepath): continue
         io = NWBHDF5IO(filepath, 'r')
         nwbfile_in = io.read()
 
