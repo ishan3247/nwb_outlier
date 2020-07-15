@@ -8,7 +8,7 @@ warnings.filterwarnings("ignore")
 
 
 while 1:
-    x = input(">> ")
+    x = input(">>> ")
     if x == 'exit':
         break
     
